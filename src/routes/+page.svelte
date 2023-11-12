@@ -27,7 +27,4 @@
         padding-bottom: 0.5em;
         text-align: center;
     }
-    .text {
-        padding-bottom: 0.5em;
-    }
 </style>
