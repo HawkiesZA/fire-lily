@@ -4,9 +4,10 @@
 </script>
 
 <nav>
-  <!-- Title -->
+  <!-- Logo -->
+  	
 	<a href="/" class="title">
-		<b>{config.title}</b>
+		<img src="/logo.jpeg" alt='Fire Lily'/>
 	</a>
 
   <!-- Navigation -->
@@ -52,4 +53,10 @@
 			margin-block: 0;
 		}
 	}
+
+	img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
 </style>

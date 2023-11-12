@@ -3,14 +3,8 @@
 
     <div class="container">
         <div class="content">
-            <div class="text">Hello! I'm Gerrit.</div>
-            <div class="text">
-                I'm a software developer with a BSc(CS) degree and over 10 years of experience. 
-                I've worked on backend (Python, NodeJS), frontend (Vue), infrastructure (GKE, AWS Lambda), mobile development (Android Native and Flutter), and embedded systems (C, C++, Lua).   
-            </div>
-            <div class="text">
-                I'm passionate about building things that make a positive impact in people's lives.
-            </div>
+            <h2>Fire Lily Dance</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/lnbbpqs_8aI?si=iIDn8zC3r4W4Jroh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -28,6 +22,10 @@
             width: 50%;
             padding: 10px;
         }
+    }
+    h2 {
+        padding-bottom: 0.5em;
+        text-align: center;
     }
     .text {
         padding-bottom: 0.5em;
