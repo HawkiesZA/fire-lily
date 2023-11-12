@@ -13,7 +13,7 @@
   <!-- Navigation -->
 	<ul class="links">
 		<li>
-			<a href="/experience">Experience</a>
+			<a href="/gallery">Gallery</a>
 		</li>
 		<li>
 			<a href="/blog">Blog</a>
