@@ -1,35 +1,18 @@
-<div class="container">
-    <div class="content">
-        <form method="POST">
-            <label>
-                Email
-                <input name="email" type="email">
-            </label>
-            <label>
-                Message
-                <textarea name="message" type="text"></textarea>
-            </label>
-            <button>Send</button>
-        </form>
-    </div>
+<div class="flex flex-col justify-center items-center mb-7">
+    <form method="POST">
+        <label>
+            Email
+            <input name="email" type="email">
+        </label>
+        <label>
+            Message
+            <textarea name="message" type="text"></textarea>
+        </label>
+        <button class="pt-2 pb-2 pl-5 pr-5">Send</button>
+    </form>
 </div>
 
 <style>
-    .container {
-        padding: 2px 16px;
-    }
-    .content {
-        width: 100%;
-        padding: 10px;
-    }
-    @media only screen and (min-width: 768px) {
-        .content {
-            margin: auto;
-            width: 50%;
-            padding: 10px;
-        }
-    }
-
     input[type=email], textarea {
         display: inline-block;
         width: 100%;
@@ -40,10 +23,12 @@
         margin-top: 6px;
         margin-bottom: 16px;
         resize: vertical;
+        color: var(--text-3);
     }
 
     button {
         float: right;
         margin-bottom: 16px;
+        background-color: var(--surface-4);
     }
 </style>

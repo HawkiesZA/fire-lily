@@ -16,7 +16,6 @@
   <!-- Header -->
 	<Header />
 	<img src="/logo.jpeg" alt='Fire Lily'/>
-	<div class="text">Something about me</div>
 	<main>
 		<!-- Black hole for other content -->
 		<PageTransition url={data.url}>
@@ -38,10 +37,6 @@
 		padding-inline: var(--size-7);
 	}
 
-	/*main {
-		padding-block: var(--size-7);
-	}*/
-
 	@media (min-width: 1440px) {
 		.layout {
 			padding-inline: 0;
@@ -54,11 +49,6 @@
         width: 200px;
         height: 200px;
         border-radius: 50%;
-    }
-	.text {
-		margin-left: auto;
-        margin-right: auto;
-		padding-top: 0.5em;
-        padding-bottom: 0.5em;
+		padding: 1em;
     }
 </style>
