@@ -1,5 +1,8 @@
 @import '@fontsource/manrope';
 @import '@fontsource/jetbrains-mono';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
 	/* font */
@@ -131,6 +134,14 @@ li {
 .surface-4 {
 	background-color: var(--surface-4);
 	color: var(--text-1);
+}
+
+.prose :is(h1) {
+	font-size: var(--size-7);
+}
+
+.prose :is(h2) {
+	font-size: var(--size-5);
 }
 
 .prose :is(h2, h3, h4, h5, h6) {
