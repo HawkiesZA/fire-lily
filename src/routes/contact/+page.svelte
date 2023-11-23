@@ -1,3 +1,50 @@
+<script>
+import { Recaptcha, recaptcha, observer } from "svelte-recaptcha-v2"
+
+const onCaptchaReady = (event) => {
+    console.log("recaptcha init has completed.")
+    /*
+     │You can enable your form button here.
+     */
+}
+
+const onCaptchaSuccess = (event) => {
+    userTracker.resolve(event);
+    console.log("token received: " + event.detail.token)
+    /*
+     │If using checkbox method, you can attach your
+     │form logic here, or dispatch your custom event.
+     */
+}
+
+const onCaptchaError = (event) => {
+    console.log(`recaptcha init has failed`)
+    /*
+     │Usually due to incorrect siteKey.
+     |Make sure you have the correct siteKey..
+     */
+}
+const onCaptchaExpire = (event) => {
+    console.log("recaptcha api has expired")
+    /*
+     │Normally, you wouldn't need to do anything.
+     │Recaptcha should reinit itself automatically.
+     */
+}
+
+const onCaptchaClose = (event) => {
+    console.log("recaptcha frame has closed")
+    /*
+     │This fires when the puzzle frame closes.
+     │Usually happens when the user clicks outside
+     |the modal frame.
+     */
+}
+
+export let data
+console.log('data', data.key)
+</script>
+
 <div class="flex flex-col justify-center items-center mb-7">
     <form method="POST">
         <label>
@@ -9,6 +56,15 @@
             <textarea name="message" type="text"></textarea>
         </label>
         <button class="pt-2 pb-2 pl-5 pr-5">Send</button>
+        <Recaptcha
+            sitekey={data.key}
+            badge={"top"}
+            size={"invisible"}
+            on:success={onCaptchaSuccess}
+            on:error={onCaptchaError}
+            on:expired={onCaptchaExpire}
+            on:close={onCaptchaClose}
+            on:ready={onCaptchaReady} />
     </form>
 </div>
 
