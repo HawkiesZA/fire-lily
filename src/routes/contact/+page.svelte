@@ -42,7 +42,6 @@ const onCaptchaClose = (event) => {
 }
 
 export let data
-console.log('data', data.key)
 </script>
 
 <div class="flex flex-col justify-center items-center mb-7">
