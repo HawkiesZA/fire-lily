@@ -30,6 +30,7 @@
 
 	.post {
 		max-inline-size: var(--size-content-3);
+		padding-bottom: var(--size-7);
 	}
 
 	.post:not(:last-child) {

@@ -141,6 +141,10 @@ li {
 	color: var(--text-1);
 }
 
+.prose {
+	padding-bottom: var(--size-8);
+}
+
 .prose :is(h1) {
 	font-size: var(--size-7);
 }
