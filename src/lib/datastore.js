@@ -66,11 +66,13 @@ export const getFromEmail = () => {
 }
 
 export const getSettings = async () => {
-    const query = datastore.createQuery('Settings')
-    const [settings] = await datastore.runQuery(query)
-    if (settings.length > 0) {
-        savedSettings = settings.reduce((obj, item) => (obj[item.key] = item.value, obj), {})
-    } else {
-        throw new Error('Settings table is empty')
+    if (Object.keys(savedSettings).length === 0) {
+        const query = datastore.createQuery('Settings')
+        const [settings] = await datastore.runQuery(query)
+        if (settings.length > 0) {
+            savedSettings = settings.reduce((obj, item) => (obj[item.key] = item.value, obj), {})
+        } else {
+            throw new Error('Settings table is empty')
+        }
     }
 }

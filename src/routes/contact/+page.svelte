@@ -9,7 +9,7 @@ const onCaptchaReady = (event) => {
 }
 
 const onCaptchaSuccess = (event) => {
-    userTracker.resolve(event);
+    formReady = true
     console.log("token received: " + event.detail.token)
     /*
      │If using checkbox method, you can attach your
@@ -18,7 +18,8 @@ const onCaptchaSuccess = (event) => {
 }
 
 const onCaptchaError = (event) => {
-    console.log(`recaptcha init has failed`)
+    formReady = false
+    console.log(`recaptcha init has failed`, event)
     /*
      │Usually due to incorrect siteKey.
      |Make sure you have the correct siteKey..
@@ -42,6 +43,7 @@ const onCaptchaClose = (event) => {
 }
 
 export let data
+let formReady = false
 </script>
 
 <div class="flex flex-col justify-center items-center mb-7">
@@ -54,16 +56,17 @@ export let data
             Message
             <textarea name="message" type="text"></textarea>
         </label>
-        <button class="pt-2 pb-2 pl-5 pr-5">Send</button>
+        
         <Recaptcha
             sitekey={data.key}
             badge={"top"}
-            size={"invisible"}
+            size={"checkbox"}
             on:success={onCaptchaSuccess}
             on:error={onCaptchaError}
             on:expired={onCaptchaExpire}
             on:close={onCaptchaClose}
             on:ready={onCaptchaReady} />
+        <button disabled={!formReady} class="pt-2 pb-2 pl-5 pr-5 disabled:opacity-50">Send</button>
     </form>
 </div>
 
