@@ -1,9 +1,28 @@
 ---
-import '../styles/global.css';
-import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Gallery";
+import '../styles/gallery.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import GalleryComponent from '../components/Gallery.astro';
+import ExternalScripts from '../components/ExternalScripts.astro';
+import GalleryHead from '../components/GalleryHead.astro';
+let title = "Gallery";
+let description =
+  "Fire Lily Dance Gallery";
 ---
-<BaseLayout pageTitle={pageTitle}>
-    <p>Here you can find some of my photos.</p>
-    <p>Keep checking back and see how my journey is going!</p>
-</BaseLayout>
+<!doctype html>
+<html lang="en">
+    <GalleryHead
+        title={title}
+        description={description}
+        author={'Vive'}
+    />
+
+  <body class="is-preload">
+    <div id="wrapper">
+      <Header />
+      <GalleryComponent />
+      <Footer />
+    </div>
+    <ExternalScripts />
+  </body>
+</html>
