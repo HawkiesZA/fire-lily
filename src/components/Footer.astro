@@ -1,0 +1,18 @@
+---
+import Social from './Social.astro';
+import Facebook from 'astro-feather-icons/Facebook'
+---
+<style>
+    footer {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+</style>
+
+<footer>
+    <Social platform="facebook" username="VeeDances" icon={Facebook}/>
+</footer>

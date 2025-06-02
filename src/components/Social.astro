@@ -1,0 +1,23 @@
+---
+import AlertTriangle from 'astro-feather-icons/AlertTriangle'
+
+const { platform, username, icon = AlertTriangle } = Astro.props;
+const Icon = icon;
+---
+<a 
+  href={`https://www.${platform}.com/${username}`} 
+  title={platform} 
+  aria-label={platform}
+>
+    <Icon />
+</a>
+
+<style>
+    a {
+      padding: 0.5rem 1rem 0.3rem;
+      color: white;
+      background-color: #282828;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+</style>
