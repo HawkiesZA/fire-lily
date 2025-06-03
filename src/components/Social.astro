@@ -3,9 +3,14 @@ import AlertTriangle from 'astro-feather-icons/AlertTriangle'
 
 const { platform, username, icon = AlertTriangle } = Astro.props;
 const Icon = icon;
+
+let href = `https://www.${platform}.com/${username}`;
+if (platform === "email") {
+  href = `mailto:${username}`;
+}
 ---
 <a 
-  href={`https://www.${platform}.com/${username}`} 
+  href={href} 
   title={platform} 
   aria-label={platform}
 >
