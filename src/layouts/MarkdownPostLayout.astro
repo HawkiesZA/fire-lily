@@ -3,22 +3,33 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
+  <div class="blog-container">
     <p>{frontmatter.pubDate.toLocaleDateString()}</p>
     <p><em>{frontmatter.description}</em></p>
     <p>Written by: {frontmatter.author}</p>
     <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
     
-    <slot />
+    <div class="blog-content"> 
+      <slot />
+    </div>
+    
     <div class="tags">
       {frontmatter.tags.map((tag: string) => (
         <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
       ))}
     </div>
+  </div>
 </BaseLayout>
 
 <style>
     a {
       color: #00539F;
+    }
+
+    .blog-container {
+      max-width: 80ch;
+      margin: 0 auto;
+      padding: 1rem;
     }
   
     .tags {
@@ -33,5 +44,9 @@ const { frontmatter } = Astro.props;
       padding: .25em 0.5em;
       font-size: 0.75em;
       background-color: #F8FCFD;
+    }
+
+    .blog-content {
+      margin: 2rem;
     }
   </style>

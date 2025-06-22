@@ -20,6 +20,11 @@
     display: none;
     margin: 0;
   }
+
+  .nav-link {
+    color: #282828;
+    text-decoration: none;
+}
   
   .nav-links a {
     font-size: 1.2rem;
@@ -210,10 +215,9 @@ video {
 }
 
 header {
-    width: 100%;
-    max-width: 80ch;
+    width: 55%;
     margin: 0 auto;
-    padding: 1rem 0rem;
+    padding: 1rem 1rem;
 }
 
 article,

@@ -12,10 +12,13 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <slot />
+  <body id="body" class="bg-base-50 text-base-900">
+    <div class="min-h-[100lvh]">
+			<Header />
+			<main>
+				<slot />
+			</main>
+		</div>
     <Footer />
     <script>
       import "../scripts/menu.js";
